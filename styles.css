@@ -1,0 +1,358 @@
+:root {
+    --bg-main: #121212;
+    --bg-card: #1e1e1e;
+    --bg-nav: #1a1a1a;
+    --text-main: #e0e0e0;
+    --text-title: #ffffff;
+    --accent: #0e18a8;
+}
+
+body.light-mode {
+    --bg-main: #f4f4f4;
+    --bg-card: #ffffff;
+    --bg-nav: #e0e0e0;
+    --text-main: #333333;
+    --text-title: #111111;
+    --accent: #0e18a8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header-container {
+    background-color: var(--bg-nav);
+    border-bottom: 4px solid var(--accent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo a {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--text-title);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header-ftc-logo {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+.navigatie_balk {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navigatie_balk a {
+    color: var(--text-title);
+    text-decoration: none;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+
+.navigatie_balk a:hover {
+    color: var(--accent);
+}
+
+.theme-btn {
+    background-color: var(--accent);
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+
+.theme-btn:hover {
+    transform: scale(1.05);
+}
+
+.introduction {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.introduction h1, .introduction h2 {
+    color: var(--text-title);
+    margin-bottom: 10px;
+}
+
+.introduction p {
+    color: var(--text-main);
+}
+
+.sponsors {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.sponsor-title a {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-title);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.sponsor-title a:hover {
+    color: var(--accent);
+}
+
+.sponsor-details {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease;
+    margin-bottom: 0;
+}
+
+.sponsor-details p {
+    color: var(--text-main);
+}
+
+.sponsor_image {
+    max-width: 180px;
+    margin: 15px auto 0 auto;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 6px;
+}
+
+.sponsor_image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.sponsors.expanded {
+    transform: scale(1.01);
+    border-color: var(--accent);
+}
+
+.sponsors.expanded .sponsor-details {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #030303;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #030303;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.informatie {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+
+}
+
+.informatie p {
+    color: var(--text-main);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.carousel-container {
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+
+.carousel-slide {
+  display: none;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  transition: 0.3s ease;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.fade {
+  animation: fadeEffect 0.5s ease-in-out;
+}
+
+@keyframes fadeEffect {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+
+
+
+
+.download-btn {
+  /* 1. Base Structure */
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  
+  /* 2. Visual Style */
+  color: #ffffff;
+  background-color: #2563eb; /* Modern vibrant blue */
+  border: none;
+  border-radius: 8px; /* Smooth rounded corners */
+  cursor: pointer;
+  
+  /* 3. Smooth Animations */
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover State: When the mouse hovers over */
+.download-btn:hover {
+  background-color: #1d4ed8; /* Slightly darker shade */
+  transform: translateY(-1px); /* Subtle lift effect */
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Active State: When the button is being clicked */
+.download-btn:active {
+  transform: translateY(0); /* Pushes down slightly on click */
+  box-shadow: none;
+}
+
+/* Focus State: Keeps it accessible for keyboard navigation */
+.download-btn:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
