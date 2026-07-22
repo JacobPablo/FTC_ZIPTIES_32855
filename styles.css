@@ -280,7 +280,7 @@ input:checked + .slider:before {
 }
 
 
-.prev, .next {
+.prev.btn, .next.btn {
   cursor: pointer;
   position: absolute;
   top: 50%;
