@@ -1,6 +1,4 @@
-/* ==========================================
-   1. BASE RESET & DESIGN TOKENS
-   ========================================== */
+
 *,
 *::before,
 *::after {
@@ -38,20 +36,18 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   width: 100%;
-  overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+  overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Ensure images scale smoothly on small screens */
+
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* ==========================================
-   2. HEADER & NAVIGATION
-   ========================================== */
+
 .header-container {
   background-color: var(--bg-nav);
   border-bottom: 4px solid var(--accent);
@@ -123,9 +119,7 @@ img {
   transform: scale(1.05);
 }
 
-/* ==========================================
-   3. CONTENT SECTIONS & CARDS
-   ========================================== */
+
 .introduction,
 .sponsors,
 .informatie {
@@ -151,9 +145,7 @@ img {
   color: var(--text-main);
 }
 
-/* ==========================================
-   4. EXPANDABLE SPONSORS SECTION
-   ========================================== */
+
 .sponsors {
   cursor: pointer;
   overflow: hidden;
@@ -205,9 +197,7 @@ img {
   margin-bottom: 15px;
 }
 
-/* ==========================================
-   5. TOGGLE SWITCH STYLES
-   ========================================== */
+
 .switch {
   position: relative;
   display: inline-block;
@@ -267,9 +257,7 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/* ==========================================
-   6. CAROUSEL & SLIDER
-   ========================================== */
+
 .carousel-container {
   width: 90%;
   max-width: 800px;
@@ -322,9 +310,7 @@ input:checked + .slider:before {
   to { opacity: 1; }
 }
 
-/* ==========================================
-   7. DOWNLOAD BUTTON STYLES
-   ========================================== */
+
 .download-btn {
   display: inline-block;
   padding: 12px 24px;
@@ -355,11 +341,7 @@ input:checked + .slider:before {
   outline-offset: 2px;
 }
 
-/* ==========================================
-   8. MEDIA QUERIES (RESPONSIVE RESPONSES)
-   ========================================== */
 
-/* Tablets & Small Laptops (Max width: 768px) */
 @media screen and (max-width: 768px) {
   .header-container {
     flex-direction: column;
