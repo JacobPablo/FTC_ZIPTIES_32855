@@ -1,184 +1,213 @@
+/* ==========================================
+   1. BASE RESET & DESIGN TOKENS
+   ========================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
-    --bg-main: #121212;
-    --bg-card: #1e1e1e;
-    --bg-nav: #1a1a1a;
-    --text-main: #e0e0e0;
-    --text-title: #ffffff;
-    --accent: #0e18a8;
+  --bg-main: #121212;
+  --bg-card: #1e1e1e;
+  --bg-nav: #1a1a1a;
+  --text-main: #e0e0e0;
+  --text-title: #ffffff;
+  --accent: #0e18a8;
 }
 
 body.light-mode {
-    --bg-main: #f4f4f4;
-    --bg-card: #ffffff;
-    --bg-nav: #e0e0e0;
-    --text-main: #333333;
-    --text-title: #111111;
-    --accent: #0e18a8;
+  --bg-main: #f4f4f4;
+  --bg-card: #ffffff;
+  --bg-nav: #e0e0e0;
+  --text-main: #333333;
+  --text-title: #111111;
+  --accent: #0e18a8;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-main);
-    color: var(--text-main);
-    line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  width: 100%;
+  overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Ensure images scale smoothly on small screens */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================
+   2. HEADER & NAVIGATION
+   ========================================== */
 .header-container {
-    background-color: var(--bg-nav);
-    border-bottom: 4px solid var(--accent);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    transition: background-color 0.3s ease;
+  background-color: var(--bg-nav);
+  border-bottom: 4px solid var(--accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  flex-wrap: wrap; /* Allows header items to wrap cleanly on mobile */
+  gap: 15px;
+  transition: background-color 0.3s ease;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .logo a {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: var(--text-title);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--text-title);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .header-ftc-logo {
-    height: 40px;
-    width: auto;
-    display: block;
+  height: 40px;
+  width: auto;
+  display: block;
 }
+
 .navigatie_balk {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .navigatie_balk a {
-    color: var(--text-title);
-    text-decoration: none;
-    padding: 8px 12px;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    transition: 0.2s;
+  color: var(--text-title);
+  text-decoration: none;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  transition: 0.2s;
 }
 
 .navigatie_balk a:hover {
-    color: var(--accent);
+  color: var(--accent);
 }
 
 .theme-btn {
-    background-color: var(--accent);
-    color: #ffffff;
-    border: none;
-    padding: 6px 12px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    text-transform: uppercase;
-    margin-left: 10px;
+  background-color: var(--accent);
+  color: #ffffff;
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  text-transform: uppercase;
+  margin-left: 10px;
 }
 
 .theme-btn:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-.introduction {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: var(--bg-card);
-    border-radius: 8px;
-    text-align: center;
-    transition: background-color 0.3s ease;
+/* ==========================================
+   3. CONTENT SECTIONS & CARDS
+   ========================================== */
+.introduction,
+.sponsors,
+.informatie {
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
-.introduction h1, .introduction h2 {
-    color: var(--text-title);
-    margin-bottom: 10px;
+.introduction h1, 
+.introduction h2 {
+  color: var(--text-title);
+  margin-bottom: 10px;
 }
 
-.introduction p {
-    color: var(--text-main);
+.introduction p,
+.sponsor-details p,
+.informatie p {
+  color: var(--text-main);
 }
 
+/* ==========================================
+   4. EXPANDABLE SPONSORS SECTION
+   ========================================== */
 .sponsors {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: var(--bg-card);
-    border-radius: 8px;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
-    cursor: pointer;
-    overflow: hidden;
-    border: 2px solid transparent;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid transparent;
 }
 
 .sponsor-title a {
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: var(--text-title);
-    text-decoration: none;
-    transition: color 0.2s ease;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-title);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .sponsor-title a:hover {
-    color: var(--accent);
+  color: var(--accent);
 }
 
 .sponsor-details {
-    max-height: 0;
-    opacity: 0;
-    transition: max-height 0.4s ease-out, opacity 0.3s ease;
-    margin-bottom: 0;
-}
-
-.sponsor-details p {
-    color: var(--text-main);
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease-out, opacity 0.3s ease;
+  margin-bottom: 0;
 }
 
 .sponsor_image {
-    max-width: 180px;
-    margin: 15px auto 0 auto;
-    padding: 10px;
-    background-color: #ffffff;
-    border-radius: 6px;
+  max-width: 180px;
+  margin: 15px auto 0 auto;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 6px;
 }
 
 .sponsor_image img {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .sponsors.expanded {
-    transform: scale(1.01);
-    border-color: var(--accent);
+  transform: scale(1.01);
+  border-color: var(--accent);
 }
 
 .sponsors.expanded .sponsor-details {
-    max-height: 200px;
-    opacity: 1;
-    margin-top: 15px;
-    margin-bottom: 15px;
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-
+/* ==========================================
+   5. TOGGLE SWITCH STYLES
+   ========================================== */
 .switch {
   position: relative;
   display: inline-block;
@@ -186,13 +215,11 @@ body {
   height: 34px;
 }
 
-
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-
 
 .slider {
   position: absolute;
@@ -232,7 +259,6 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-
 .slider.round {
   border-radius: 34px;
 }
@@ -241,33 +267,17 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.informatie {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 30px;
-    border-radius: 8px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-
-}
-
-.informatie p {
-    color: var(--text-main);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-
+/* ==========================================
+   6. CAROUSEL & SLIDER
+   ========================================== */
 .carousel-container {
-    max-width: 800px;
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-    border-radius: 16px;
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 16px;
 }
-
 
 .carousel-slide {
   display: none;
@@ -278,7 +288,6 @@ input:checked + .slider:before {
   height: auto;
   display: block;
 }
-
 
 .prev.btn, .next.btn {
   cursor: pointer;
@@ -295,7 +304,6 @@ input:checked + .slider:before {
   transition: 0.3s ease;
 }
 
-
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
@@ -304,7 +312,6 @@ input:checked + .slider:before {
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-
 
 .fade {
   animation: fadeEffect 0.5s ease-in-out;
@@ -315,44 +322,103 @@ input:checked + .slider:before {
   to { opacity: 1; }
 }
 
-
-
-
-
+/* ==========================================
+   7. DOWNLOAD BUTTON STYLES
+   ========================================== */
 .download-btn {
-  /* 1. Base Structure */
   display: inline-block;
   padding: 12px 24px;
   font-size: 16px;
   font-weight: 600;
   font-family: inherit;
-  
-  /* 2. Visual Style */
   color: #ffffff;
-  background-color: #2563eb; /* Modern vibrant blue */
+  background-color: #2563eb;
   border: none;
-  border-radius: 8px; /* Smooth rounded corners */
+  border-radius: 8px;
   cursor: pointer;
-  
-  /* 3. Smooth Animations */
   transition: all 0.2s ease-in-out;
 }
 
-/* Hover State: When the mouse hovers over */
 .download-btn:hover {
-  background-color: #1d4ed8; /* Slightly darker shade */
-  transform: translateY(-1px); /* Subtle lift effect */
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
-/* Active State: When the button is being clicked */
 .download-btn:active {
-  transform: translateY(0); /* Pushes down slightly on click */
+  transform: translateY(0);
   box-shadow: none;
 }
 
-/* Focus State: Keeps it accessible for keyboard navigation */
 .download-btn:focus-visible {
   outline: 2px solid #2563eb;
   outline-offset: 2px;
+}
+
+/* ==========================================
+   8. MEDIA QUERIES (RESPONSIVE RESPONSES)
+   ========================================== */
+
+/* Tablets & Small Laptops (Max width: 768px) */
+@media screen and (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 3%;
+  }
+
+  .logo {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .navigatie_balk {
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .navigatie_balk a {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+
+  .theme-btn {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+
+  .introduction,
+  .sponsors,
+  .informatie {
+    width: 95%;
+    padding: 20px 15px;
+    margin: 20px auto;
+  }
+
+  .sponsor-title a {
+    font-size: 1.8rem;
+  }
+
+  .prev.btn, .next.btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile Phones (Max width: 480px) */
+@media screen and (max-width: 480px) {
+  .logo a {
+    font-size: 1.3rem;
+  }
+
+  .navigatie_balk {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Spreads links evenly in a 2-column grid */
+    gap: 6px;
+  }
+
+  .sponsor-title a {
+    font-size: 1.4rem;
+  }
 }
