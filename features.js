@@ -54,11 +54,9 @@ function showSlides(n) {
   
   for (let i = 0; i < slides.length; i++) {
     slides[i].classList.remove("active");
-    slides[i].style.display = "none";
   }
   
   slides[slideIndex].classList.add("active");
-  slides[slideIndex].style.display = "block";
 }
 
 document.addEventListener("DOMContentLoaded", function() {

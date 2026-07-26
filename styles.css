@@ -284,8 +284,10 @@ input:checked + .slider:before {
   font-weight: bold;
   font-size: 18px;
   background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  outline: none;
   user-select: none;
-  transition: 0.3s ease;
+  transition: background-color 0.3s ease;
   z-index: 10;
 }
 
