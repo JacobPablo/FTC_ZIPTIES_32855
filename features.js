@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
   setInterval(() => { changeSlide(1); }, 4000);
 });
 // Counter for the next upcoming event day
-const eventDate = "September 19, 2026 09:00:00";
+const eventDate = "September 12, 2026 09:00:00";
 const targetDate = new Date(eventDate).getTime();
 
 function updateCountdown() {
