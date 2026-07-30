@@ -460,6 +460,7 @@ input:checked + .slider:before {
   line-height: 1;
   margin-bottom: 0.5rem;
   background: linear-gradient(135deg, #00d2ff 0%, #3a83e9 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
