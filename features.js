@@ -63,3 +63,47 @@ document.addEventListener("DOMContentLoaded", function() {
   showSlides(slideIndex);
   setInterval(() => { changeSlide(1); }, 4000);
 });
+// Counter for the next upcoming event day
+const eventDate = "December 15, 2026 09:00:00";
+const targetDate= new Date(eventDate).getTime();
+
+function updateCountdown() {
+const now = new Date().getTime();
+const distance = targetDate - now;
+
+if (distance < 0) {
+    return {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+        return: {
+            "The event has already occurred or begun.": true
+        }
+    };
+}
+
+const msInSecond = 1000;
+const msInMinute = 1000 * 60;
+const msInHour = 1000 * 60 * 60;
+const msInDay = 1000 * 60 * 60 * 24;
+
+const days = Math.floor(distance / msInDay);
+const hours = Math.floor((distance % msInDay) / msInHour);
+const minutes = Math.floor((distance % msInHour) / msInMinute);
+const seconds = Math.floor((distance % msInMinute) / msInSecond);
+
+return {
+    days,
+    hours,
+    minutes,
+    seconds,
+    isFinished: false
+};
+document.getElementById("days").textContent    = String(days).padStart(2, '0');
+  document.getElementById("hours").textContent   = String(hours).padStart(2, '0');
+  document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+  document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+}
+
+updateCountdown();
