@@ -447,8 +447,8 @@ input:checked + .slider:before {
 /* Hover Effect on Cards */
 #countdown > div:hover {
   transform: translateY(-3px);
-  border-color: #00d2ff;
-  box-shadow: 0 6px 20px rgba(0, 210, 255, 0.15);
+  border-color: #0e18a8;
+  box-shadow: 0 6px 20px rgba(14, 24, 168, 0.15);
 }
 
 /* Number Values */
@@ -459,7 +459,7 @@ input:checked + .slider:before {
   font-weight: 800;
   line-height: 1;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #00d2ff 0%, #3a83e9 100%);
+  background: linear-gradient(135deg, #2a32a3 0%, #0e18a8 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
